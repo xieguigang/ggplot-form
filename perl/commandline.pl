@@ -13,3 +13,8 @@ BEGIN {
 END {
 
 }
+
+print "command line input";
+print @ARGV;
+
+commandline();
