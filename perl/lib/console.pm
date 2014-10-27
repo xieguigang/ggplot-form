@@ -22,3 +22,10 @@ sub getSize {
     
     return new ConsoleSize($row, $col, $xpixel, $ypixel);
 }
+
+1;
+
+__END__
+
+=head1 this is a module for console operation
+=cut
