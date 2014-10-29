@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-package ConsoleSize
+package My::ConsoleSize;
 
 sub new {
     my $class = shift;
@@ -9,7 +9,10 @@ sub new {
         $col    => shift, 
         $xpixel => shift, 
         $ypixel => shift
-    }
+    };
+
+    bless $self, $class;
+    return $self;
 }
 
 sub get_nrows {
@@ -31,3 +34,5 @@ sub get_word_size {
     my( $self ) = @_;
     return ($self->{row}, $self->{col});
 }
+
+1;

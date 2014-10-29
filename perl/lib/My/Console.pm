@@ -1,9 +1,16 @@
 #!/usr/bin/perl
 
-package Console;
+package My::Console;
+
+use My::ConsoleSize;
 
 sub new {
+    my $class = shift;
+    my $self = {        
+    };
 
+    bless $self, $class;
+    return $self;
 }
 
 # try to get console information for formatted print 
@@ -20,9 +27,10 @@ sub getSize {
 
     ($row, $col, $xpixel, $ypixel) = unpack('S4', $winsize);
     
-    return new ConsoleSize($row, $col, $xpixel, $ypixel);
+    return new My::ConsoleSize($row, $col, $xpixel, $ypixel);
 }
 
+# 2014-10-27 The 1; at the bottom causes eval to evaluate to TRUE (and thus not fail)
 1;
 
 __END__

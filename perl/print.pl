@@ -1,9 +1,13 @@
 #!/usr/bin/perl
 
-require "./lib/console.pm";
+use lib 'lib';
+
+use My::Console;
 
 # nice print module for perl
 
-my $console = new Console();
+my $console = new My::Console();
 
-print $console->getSize()->get_nrows();
+my $n = $console->getSize()->get_nrows();
+
+print "test: $n\n";
