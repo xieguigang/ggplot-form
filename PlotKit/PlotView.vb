@@ -7,10 +7,23 @@ Imports PlotPadding = Microsoft.VisualBasic.MIME.Markup.HTML.CSS.Padding
 
 Public Class PlotView : Inherits Control
 
-    Public Property Chart As Plot
-    Public Property PlotPadding As PlotPadding
+    Dim _chart As Plot
 
-    Private Sub PlotView_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+    Public Property Chart As Plot
+        Get
+            Return _chart
+        End Get
+        Set(value As Plot)
+            _chart = value
+            Refresh()
+        End Set
+    End Property
+
+    Public Property PlotPadding As PlotPadding = g.DefaultPadding
+
+    Overrides Sub Refresh()
+        MyBase.Refresh()
+
         If Not Chart Is Nothing Then
             Dim g As Graphics = Me.CreateGraphics
             Dim canvas As New Graphics2D(g, Me.Size)
@@ -21,5 +34,9 @@ Public Class PlotView : Inherits Control
 
             Call Chart.Plot(canvas, region)
         End If
+    End Sub
+
+    Private Sub PlotView_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        Call Refresh()
     End Sub
 End Class
