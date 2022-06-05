@@ -1,2 +1,2 @@
 # ``Plot#``
-``Plot#`` Kit: datavisualization components for WinForm.
+A interactive data visualization canvas for ggplot.
