@@ -48,17 +48,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic.Data.ChartPlots">
-      <HintPath>..\..\GCModeller\src\runtime\sciBASIC#\Data_science\Visualization\test\bin\Debug\Microsoft.VisualBasic.Data.ChartPlots.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualBasic.Framework_v47_dotnet_8da45dcd8060cc9a">
-      <HintPath>..\..\GCModeller\src\runtime\sciBASIC#\Microsoft.VisualBasic.Core\src\bin\Debug\Microsoft.VisualBasic.Framework_v47_dotnet_8da45dcd8060cc9a.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic.Imaging">
       <HintPath>..\..\GCModeller\GCModeller\bin\Microsoft.VisualBasic.Imaging.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualBasic.MIME.Markup">
-      <HintPath>..\..\GCModeller\GCModeller\bin\Microsoft.VisualBasic.MIME.Markup.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -132,6 +123,30 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\GCModeller\src\runtime\sciBASIC#\Data_science\Mathematica\Math\Math.Statistics\stats-netcore5.vbproj">
+      <Project>{c9c8bf51-e74f-4754-9115-8a003b70c741}</Project>
+      <Name>stats-netcore5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GCModeller\src\runtime\sciBASIC#\Data_science\Mathematica\Math\Math\Math.NET5.vbproj">
+      <Project>{6e21176c-628b-43fb-95a9-7d2873ca029c}</Project>
+      <Name>Math.NET5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GCModeller\src\runtime\sciBASIC#\Data_science\Visualization\Plots\plots-netcore5.vbproj">
+      <Project>{1b6bacb4-37a7-4d44-a741-7b92e4cec176}</Project>
+      <Name>plots-netcore5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GCModeller\src\runtime\sciBASIC#\gr\Microsoft.VisualBasic.Imaging\imaging.NET5.vbproj">
+      <Project>{fcbbb17a-deca-4ebd-9079-e43e15db69ed}</Project>
+      <Name>imaging.NET5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GCModeller\src\runtime\sciBASIC#\Microsoft.VisualBasic.Core\src\Core.vbproj">
+      <Project>{c31009a4-ca5e-45a1-a704-d8e126ceec75}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GCModeller\src\runtime\sciBASIC#\mime\text%25html\html_netcore5.vbproj">
+      <Project>{cf859c38-ebc6-432a-ae87-39c3f60876aa}</Project>
+      <Name>html_netcore5</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlotKit\PlotKit.vbproj">
       <Project>{75CD24B7-2D8B-4586-967D-76E01BA34495}</Project>
       <Name>PlotKit</Name>

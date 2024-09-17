@@ -8,7 +8,8 @@ Public Class Form1
         Dim scatter As New SerialData With {.color = Color.Red, .pts = SeqRandom(5).Select(Function(i) New PointData With {.pt = New PointF(Rnd, Rnd)}).ToArray, .pointSize = 5}
         Dim theme As New Theme With {
             .drawLegend = True,
-            .axisTickFormat = "F4",
+            .XaxisTickFormat = "F4",
+            .YaxisTickFormat = "F4",
             .drawGrid = True,
             .background = "white"
         }

@@ -3,7 +3,7 @@ Imports System.Windows.Forms
 Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
-Imports PlotPadding = Microsoft.VisualBasic.MIME.Markup.HTML.CSS.Padding
+Imports PlotPadding = Microsoft.VisualBasic.MIME.Html.CSS.Padding
 
 Public Class PlotView : Inherits Control
 
