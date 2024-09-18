@@ -169,7 +169,7 @@
       <Name>html_netcore5</Name>
     </ProjectReference>
     <ProjectReference Include="..\PlotKit\PlotKit.vbproj">
-      <Project>{75CD24B7-2D8B-4586-967D-76E01BA34495}</Project>
+      <Project>{c52eaa4d-53d4-46c9-b7a5-3124479b93f7}</Project>
       <Name>PlotKit</Name>
     </ProjectReference>
   </ItemGroup>
