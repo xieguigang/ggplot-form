@@ -1,6 +1,4 @@
-﻿Imports System.Drawing
-Imports System.Windows.Forms
-Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic
+﻿Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
 Imports PlotPadding = Microsoft.VisualBasic.MIME.Html.CSS.Padding
