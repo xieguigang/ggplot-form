@@ -3,7 +3,7 @@ Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
 Imports PlotPadding = Microsoft.VisualBasic.MIME.Html.CSS.Padding
 
-Public Class PlotView : Inherits Control
+Public Class PlotView
 
     Dim _chart As Plot
 
@@ -13,15 +13,13 @@ Public Class PlotView : Inherits Control
         End Get
         Set(value As Plot)
             _chart = value
-            Refresh()
+            Rendering()
         End Set
     End Property
 
     Public Property PlotPadding As PlotPadding = g.DefaultPadding
 
-    Overrides Sub Refresh()
-        MyBase.Refresh()
-
+    Private Sub Rendering()
         If Not Chart Is Nothing Then
             Dim g As Graphics = Me.CreateGraphics
             Dim canvas As New Graphics2D(g, Me.Size)
@@ -35,6 +33,6 @@ Public Class PlotView : Inherits Control
     End Sub
 
     Private Sub PlotView_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-        Call Refresh()
+        Call Rendering()
     End Sub
 End Class
