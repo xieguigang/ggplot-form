@@ -29,6 +29,6 @@ Public Class Form1
 
         view.ggplot = plot
 
-        Call test.
+        Call test.WriteCsv("./test_signal.csv")
     End Sub
 End Class
