@@ -17,20 +17,22 @@ Public Class PlotView
     End Property
 
     Public Property PlotPadding As PlotPadding = g.DefaultPadding
-
     Public Property ScaleFactor As Single = 2
 
     Private Sub Rendering()
         If Not ggplot Is Nothing Then
             Dim size As New Size(Width * ScaleFactor, Height * ScaleFactor)
-            Dim g As Graphics = Me.CreateGraphics
-            Dim canvas As New Graphics2D(g, size)
+            Dim g As Graphics2D = size.CreateGDIDevice(filled:=ggplot.ggplotTheme.background.TranslateColor)
             Dim region As New GraphicsRegion With {
                 .Padding = Me.PlotPadding,
                 .Size = size
             }
 
-            Call ggplot.Plot(canvas, region)
+            Call ggplot.Plot(g, region)
+            Call g.Flush()
+
+            PictureBox1.BackgroundImage = g.ImageResource
+            g.Dispose()
         End If
     End Sub
 
