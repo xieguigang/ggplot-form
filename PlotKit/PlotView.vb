@@ -20,6 +20,10 @@ Public Class PlotView
     Public Property ScaleFactor As Single = 2
 
     Private Sub Rendering()
+        If Width <= 0 OrElse Height <= 0 Then
+            Return
+        End If
+
         If Not ggplot Is Nothing Then
             Dim size As New Size(Width * ScaleFactor, Height * ScaleFactor)
             Dim g As Graphics2D = size.CreateGDIDevice(filled:=ggplot.ggplotTheme.background.TranslateColor)
