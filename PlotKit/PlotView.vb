@@ -17,7 +17,7 @@ Public Class PlotView
     End Property
 
     Public Property PlotPadding As PlotPadding = g.DefaultPadding
-    Public Property ScaleFactor As Single = 2
+    Public Property ScaleFactor As Single = 1.25
 
     Private Sub Rendering()
         If Not ggplot Is Nothing Then
