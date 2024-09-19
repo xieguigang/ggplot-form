@@ -22,8 +22,16 @@ Partial Class PlotView
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        SuspendLayout()
+        ' 
+        ' PlotView
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.SkyBlue
+        Name = "PlotView"
+        Size = New Size(404, 336)
+        ResumeLayout(False)
     End Sub
 
 End Class
