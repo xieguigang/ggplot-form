@@ -18,13 +18,16 @@ Public Class PlotView
 
     Public Property PlotPadding As PlotPadding = g.DefaultPadding
 
+    Public Property ScaleFactor As Single = 2
+
     Private Sub Rendering()
         If Not ggplot Is Nothing Then
+            Dim size As New Size(Width * ScaleFactor, Height * ScaleFactor)
             Dim g As Graphics = Me.CreateGraphics
-            Dim canvas As New Graphics2D(g, Me.Size)
+            Dim canvas As New Graphics2D(g, size)
             Dim region As New GraphicsRegion With {
                 .Padding = Me.PlotPadding,
-                .Size = Me.Size
+                .Size = size
             }
 
             Call ggplot.Plot(canvas, region)
