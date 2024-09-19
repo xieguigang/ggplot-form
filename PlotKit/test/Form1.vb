@@ -13,7 +13,7 @@ Public Class Form1
         Dim test As DataFrame = New DataFrame().add("x", New Double() {1, 2, 3, 4, 5}).add("y", New Double() {2, 4, 6, 8, 10})
         Dim plot As ggplot.ggplot = ggplotFunction.ggplot(test, mapping:=aes("x", "y"))
 
-        plot += geom_point()
+        plot += geom_point(size:=30)
 
         view.ggplot = plot
     End Sub
