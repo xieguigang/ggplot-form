@@ -1,5 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
+Imports Microsoft.VisualBasic.Imaging.Driver
 Imports PlotPadding = Microsoft.VisualBasic.MIME.Html.CSS.Padding
 
 Public Class PlotView
@@ -26,7 +27,7 @@ Public Class PlotView
 
         If Not ggplot Is Nothing Then
             Dim size As New Size(Width * ScaleFactor, Height * ScaleFactor)
-            Dim g As Graphics2D = size.CreateGDIDevice(filled:=ggplot.ggplotTheme.background.TranslateColor)
+            Dim g As IGraphics = DriverLoad.CreateGraphicsDevice(size, ggplot.ggplotTheme.background.TranslateColor, driver:=Drivers.GDI)
             Dim region As New GraphicsRegion With {
                 .Padding = Me.PlotPadding,
                 .Size = size
@@ -35,7 +36,7 @@ Public Class PlotView
             Call ggplot.Plot(g, region)
             Call g.Flush()
 
-            PictureBox1.BackgroundImage = g.ImageResource
+            ' PictureBox1.BackgroundImage = DirectCast(g, GdiRasterGraphics).ImageResource
             g.Dispose()
         End If
     End Sub
