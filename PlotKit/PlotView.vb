@@ -36,7 +36,7 @@ Public Class PlotView
             Call ggplot.Plot(g, region)
             Call g.Flush()
 
-            ' PictureBox1.BackgroundImage = DirectCast(g, GdiRasterGraphics).ImageResource
+            PictureBox1.BackgroundImage = DirectCast(g, GdiRasterGraphics).GetGdiPlusRasterImageResource
             g.Dispose()
         End If
     End Sub
