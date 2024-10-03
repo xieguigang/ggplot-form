@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports ggplot
+Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Math
 Imports Microsoft.VisualBasic.Math.DataFrame
@@ -9,6 +10,10 @@ Imports Microsoft.VisualBasic.Math.VBMath
 Imports SMRUCC.Rsharp
 
 Module plot_test
+
+    Sub New()
+        Call SkiaDriver.Register()
+    End Sub
 
     Sub Main()
         Dim x As Double() = seq(0, 50, by:=0.05).ToArray
