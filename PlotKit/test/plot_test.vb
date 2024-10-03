@@ -27,7 +27,7 @@ Module plot_test
             .add("y", SIMD.Add.f64_op_add_f64(SIMD.Add.f64_op_add_f64(SIMD.Add.f64_op_add_f64(y1, y2), y3), noise))
         Dim plot As ggplot.ggplot = ggplotFunction.ggplot(test, mapping:=aes("x", "y"), args:=list(slot("w") = 1920, slot("h") = 1600))
 
-        plot += geom_point(size:=12)
+        plot += geom_point(size:=32)
 
         'Dim width As Integer = 1000
         'Dim height As Integer = 900
@@ -45,6 +45,14 @@ Module plot_test
 
         Using s As Stream = "./scatter.png".Open(FileMode.OpenOrCreate, doClear:=True)
             Call plot.Save(s, ImageFormats.Png)
+        End Using
+
+        Using s As Stream = "./scatter.svg".Open(FileMode.OpenOrCreate, doClear:=True)
+            Call plot.Save(s, ImageFormats.Svg)
+        End Using
+
+        Using s As Stream = "./scatter.pdf".Open(FileMode.OpenOrCreate, doClear:=True)
+            Call plot.Save(s, ImageFormats.Pdf)
         End Using
     End Sub
 End Module
