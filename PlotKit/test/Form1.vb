@@ -5,10 +5,15 @@ Imports Microsoft.VisualBasic.Math.VBMath
 Imports Microsoft.VisualBasic.Math.Distributions
 Imports Microsoft.VisualBasic.Math
 Imports Microsoft.VisualBasic.Math.LinearAlgebra
+Imports Microsoft.VisualBasic.Drawing
 
 Public Class Form1
 
     Dim WithEvents view As New PlotView
+
+    Shared Sub New()
+        Call SkiaDriver.Register()
+    End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         Controls.Add(view)

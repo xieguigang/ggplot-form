@@ -15,7 +15,10 @@ Module plot_test
         Call SkiaDriver.Register()
     End Sub
 
-    Sub Main()
+    Sub Main1()
+
+        Call New Form1().ShowDialog()
+
         Dim x As Double() = seq(0, 50, by:=0.05).ToArray
         Dim y1 = Gaussian.Gaussian(x, 12000, 15, 1)
         Dim y2 = Gaussian.Gaussian(x, 300, 27, 2)
