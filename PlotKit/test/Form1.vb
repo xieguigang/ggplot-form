@@ -33,11 +33,11 @@ Public Class Form1
         Dim test As DataFrame = New DataFrame() _
             .add("x", x) _
             .add("y", SIMD.Add.f64_op_add_f64(SIMD.Add.f64_op_add_f64(SIMD.Add.f64_op_add_f64(y1, y2), y3), noise))
-        Dim plot As ggplot.ggplot = ggplotFunction.ggplot(test, mapping:=aes("x", "y"), colorSet:="jet")
+        Dim plot As ggplot.ggplot = ggplotFunction.ggplot(test, mapping:=aes("x", "y"), colorSet:="jet", padding:="padding: 5% 10% 10% 10%;")
 
         plot += geom_point(size:=12, color:="y")
 
-        view.PlotPadding = "padding: 5% 10% 10% 10%;"
+        view.PlotPadding = plot.ggplotTheme.padding
         view.ggplot = plot
         test.rownames = x.Select(Function(xi, i) CStr(i + 1)).ToArray
 

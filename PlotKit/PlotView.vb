@@ -25,7 +25,7 @@ Public Class PlotView
         End Get
     End Property
 
-    Public Property PlotPadding As PlotPadding = g.DefaultPadding
+    Public Property PlotPadding As PlotPadding = "padding: 5% 10% 10% 10%;"
     Public Property ScaleFactor As Single = 2
 
 #If DEBUG Then
