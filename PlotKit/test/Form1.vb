@@ -1,11 +1,11 @@
 ﻿Imports ggplot
-Imports Microsoft.VisualBasic.Math.DataFrame
-Imports PlotKit
-Imports Microsoft.VisualBasic.Math.VBMath
-Imports Microsoft.VisualBasic.Math.Distributions
-Imports Microsoft.VisualBasic.Math
-Imports Microsoft.VisualBasic.Math.LinearAlgebra
+Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.Drawing
+Imports Microsoft.VisualBasic.Math
+Imports Microsoft.VisualBasic.Math.Distributions
+Imports Microsoft.VisualBasic.Math.LinearAlgebra
+Imports Microsoft.VisualBasic.Math.VBMath
+Imports PlotKit
 
 Public Class Form1
 

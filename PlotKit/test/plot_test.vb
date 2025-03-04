@@ -1,9 +1,9 @@
 ﻿Imports System.IO
 Imports ggplot
+Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Math
-Imports Microsoft.VisualBasic.Math.DataFrame
 Imports Microsoft.VisualBasic.Math.Distributions
 Imports Microsoft.VisualBasic.Math.LinearAlgebra
 Imports Microsoft.VisualBasic.Math.VBMath
