@@ -26,7 +26,7 @@ Public Class PlotView
     End Property
 
     Public Property PlotPadding As PlotPadding = "padding: 5% 10% 10% 10%;"
-    Public Property ScaleFactor As Single = 1
+    Public Property ScaleFactor As Single = 1.25
 
 #If DEBUG Then
     Public Property Debug As Boolean = True
