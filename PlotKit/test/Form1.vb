@@ -1,6 +1,7 @@
 ﻿Imports ggplot
 Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.Drawing
+Imports Microsoft.VisualBasic.Imaging.Driver
 Imports Microsoft.VisualBasic.Math
 Imports Microsoft.VisualBasic.Math.Distributions
 Imports Microsoft.VisualBasic.Math.LinearAlgebra
@@ -12,7 +13,11 @@ Public Class Form1
     Dim WithEvents view As New PlotView
 
     Shared Sub New()
+#If NET8_0_OR_GREATER Then
         Call SkiaDriver.Register()
+#Else
+        Call ImageDriver.Register()
+#End If
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
