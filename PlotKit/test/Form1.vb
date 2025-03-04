@@ -38,14 +38,17 @@ Public Class Form1
 
     Private Sub pcaTest()
         Dim iris = DataFrame.read_csv("E:\GCModeller\src\R-sharp\REnv\data\bezdekIris.csv")
-        Dim classes As StringVector = iris!class
-        Call iris.delete("class")
+        Dim classes As StringVector = iris.delete("class")
         Dim pca = iris.CommonDataSet().PrincipalComponentAnalysis(maxPC:=2).GetPCAScore
-        Dim plot As ggplot.ggplot = ggplotFunction.ggplot(pca.add("class", classes), mapping:=aes("PC1", "PC2", color:="class"), colorSet:="jet", padding:="padding: 5% 10% 10% 10%;")
+        Dim plot As ggplot.ggplot = ggplotFunction.ggplot(
+            data:=pca.add("class", classes),
+            mapping:=aes("PC1", "PC2", color:="class"),
+            colorSet:="jet",
+            padding:="padding: 5% 10% 10% 10%;")
 
         plot += geom_point(size:=12)
 
-        view.ScaleFactor = 1
+        view.ScaleFactor = 1.25
         view.PlotPadding = plot.ggplotTheme.padding
         view.ggplot = plot
     End Sub
