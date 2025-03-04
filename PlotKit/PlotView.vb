@@ -66,4 +66,8 @@ Public Class PlotView
     Private Sub PlotView_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
         Call Rendering()
     End Sub
+
+    Public Sub Save(filename As String, format As ImageFormats)
+
+    End Sub
 End Class
