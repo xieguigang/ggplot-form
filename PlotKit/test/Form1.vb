@@ -35,6 +35,6 @@ Public Class Form1
         view.ggplot = plot
         test.rownames = x.Select(Function(xi, i) CStr(i + 1)).ToArray
 
-        Call test.WriteCsv("./test_signal.csv")
+        '  Call test.WriteCsv("./test_signal.csv")
     End Sub
 End Class
