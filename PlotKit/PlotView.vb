@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.Imaging
+﻿Imports Microsoft.VisualBasic.ApplicationServices
+Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
 Imports Microsoft.VisualBasic.Imaging.Driver
 Imports PlotPadding = Microsoft.VisualBasic.MIME.Html.CSS.Padding
@@ -6,6 +7,7 @@ Imports PlotPadding = Microsoft.VisualBasic.MIME.Html.CSS.Padding
 Public Class PlotView
 
     Dim m_ggplot As ggplot.ggplot
+    Dim m_counter As New PerformanceCounter
 
     Public Property ggplot As ggplot.ggplot
         Get
@@ -17,12 +19,28 @@ Public Class PlotView
         End Set
     End Property
 
+    Public ReadOnly Property LastRenderCounter As TimeCounter
+        Get
+            Return m_counter.LastCheckPoint
+        End Get
+    End Property
+
     Public Property PlotPadding As PlotPadding = g.DefaultPadding
     Public Property ScaleFactor As Single = 2
+
+#If DEBUG Then
+    Public Property Debug As Boolean = True
+#Else
+    Public Property Debug As Boolean = False
+#End If
 
     Private Sub Rendering()
         If Width <= 0 OrElse Height <= 0 Then
             Return
+        End If
+
+        If Debug Then
+            Call m_counter.Mark()
         End If
 
         If Not ggplot Is Nothing Then
@@ -38,6 +56,10 @@ Public Class PlotView
 
             PictureBox1.BackgroundImage = DirectCast(g, GdiRasterGraphics).GetGdiPlusRasterImageResource
             g.Dispose()
+        End If
+
+        If Debug Then
+            Call m_counter.Mark("render")
         End If
     End Sub
 

@@ -42,4 +42,10 @@ Public Class Form1
 
         '  Call test.WriteCsv("./test_signal.csv")
     End Sub
+
+    Private Sub view_SizeChanged(sender As Object, e As EventArgs) Handles view.SizeChanged
+        If view.Debug Then
+            Me.Text = view.LastRenderCounter.ToString
+        End If
+    End Sub
 End Class
