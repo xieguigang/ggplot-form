@@ -45,6 +45,7 @@ Public Class Form1
 
         plot += geom_point(size:=12)
 
+        view.ScaleFactor = 1
         view.PlotPadding = plot.ggplotTheme.padding
         view.ggplot = plot
     End Sub
