@@ -37,6 +37,7 @@ Public Class Form1
 
         plot += geom_point(size:=12, color:="y")
 
+        view.PlotPadding = "padding: 5% 10% 10% 10%;"
         view.ggplot = plot
         test.rownames = x.Select(Function(xi, i) CStr(i + 1)).ToArray
 
