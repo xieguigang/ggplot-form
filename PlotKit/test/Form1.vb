@@ -35,7 +35,7 @@ Public Class Form1
             .add("y", SIMD.Add.f64_op_add_f64(SIMD.Add.f64_op_add_f64(SIMD.Add.f64_op_add_f64(y1, y2), y3), noise))
         Dim plot As ggplot.ggplot = ggplotFunction.ggplot(test, mapping:=aes("x", "y"))
 
-        plot += geom_point(size:=12)
+        plot += geom_point(size:=12, color:="y")
 
         view.ggplot = plot
         test.rownames = x.Select(Function(xi, i) CStr(i + 1)).ToArray
